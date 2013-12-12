@@ -36,7 +36,13 @@ describe SinatraWebsocketTemplate::CLI do
       expect(@project.join("lib", "public", "js", "application.js")).to exist
       expect(@project.join("lib", "projectA", "backend.rb")).to exist
 
+      # created by 'bundle gem command'
       expect(@project.join("Gemfile")).to exist
+      expect(@project.join("lib", "project_a.rb")).to exist
+
+      gemspec = @project.join("project_a.gemspec")
+      expect(gemspec).to exist
+      expect(gemspec.read).to match /spec\.add_dependency.*faye-websocket.*sinatra.*puma/m
     end
   end
 end

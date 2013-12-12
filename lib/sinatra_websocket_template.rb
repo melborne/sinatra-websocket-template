@@ -1,4 +1,4 @@
-%w(version cli builder).each do |lib|
+%w(version cli).each do |lib|
   require "sinatra_websocket_template/#{lib}"
 end
 
