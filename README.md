@@ -1,28 +1,28 @@
 # SinatraWebsocketTemplate
 
-Generate a skelton of WebSocket application with Sinatra
+`SinatraWebsocketTemplate` is for generating a skeleton of WebSocket application with Ruby(Sinatra)
+
+A concept of the skeleton code is inspired by the following article:
+
+> [Using WebSockets on Heroku with Ruby | Heroku Dev Center](https://devcenter.heroku.com/articles/ruby-websockets "Using WebSockets on Heroku with Ruby | Heroku Dev Center")
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'sinatra_websocket_template'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
 
     $ gem install sinatra_websocket_template
 
 ## Usage
 
-At terminal, `sinatra_websocket_template` command available.
+4 steps to run a skeleton demo application;
 
-    sinatra_websocket_template new YOUR_PROJECT_NAME
+    $ sinatra_websocket_template new YOUR_PROJECT_NAME
 
-This create a skelton for your project.
+    $ cd YOUR_PROJECT_NAME
+
+    $ bundle install
+
+    $ bundle exec foreman start
+
+Open http://localhost:5000 to review it, then modify it as you like.
 
 ## Contributing
 

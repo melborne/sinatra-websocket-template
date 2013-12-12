@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = SinatraWebsocketTemplate::VERSION
   spec.authors       = ["kyoendo"]
   spec.email         = ["postagie@gmail.com"]
-  spec.description   = %q{Generate a skelton of WebSocket application with Sinatra}
-  spec.summary       = %q{Generate a skelton of WebSocket application with Sinatra}
-  spec.homepage      = ""
+  spec.description   = %q{Generate a skeleton of WebSocket application with Ruby(Sinatra)}
+  spec.summary       = %q{Generate a skeleton of WebSocket application with Ruby(Sinatra)}
+  spec.homepage      = "https://github.com/melborne/sinatra-websocket-template"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
