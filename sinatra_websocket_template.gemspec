@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = SinatraWebsocketTemplate::VERSION
   spec.authors       = ["kyoendo"]
   spec.email         = ["postagie@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Generate a skelton of WebSocket application with Sinatra}
+  spec.summary       = %q{Generate a skelton of WebSocket application with Sinatra}
   spec.homepage      = ""
   spec.license       = "MIT"
 

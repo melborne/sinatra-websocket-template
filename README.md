@@ -1,6 +1,6 @@
 # SinatraWebsocketTemplate
 
-TODO: Write a gem description
+Generate a skelton of WebSocket application with Sinatra
 
 ## Installation
 
@@ -18,7 +18,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+At terminal, `sinatra_websocket_template` command available.
+
+    sinatra_websocket_template new YOUR_PROJECT_NAME
+
+This create a skelton for your project.
 
 ## Contributing
 
