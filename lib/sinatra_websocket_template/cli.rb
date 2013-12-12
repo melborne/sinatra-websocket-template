@@ -19,7 +19,6 @@ module SinatraWebsocketTemplate
         module_name: project_name.split('_').map(&:capitalize).join,
         namespaced_path: project_name
       }
-      execute_and_edit_bundle_gem(options[:dir], project_name)
 
       template("project/Procfile.tt", File.join(target, "Procfile"))
       template("project/config.ru.tt", File.join(target, "config.ru"), opts)
@@ -28,7 +27,9 @@ module SinatraWebsocketTemplate
       template("project/lib/views/index.haml.tt", File.join(lib_path, "views", "index.haml"), opts)
       template("project/lib/public/css/main.css.tt", File.join(lib_path, "public", "css", "main.css"))
       template("project/lib/public/js/application.js.tt", File.join(lib_path, "public", "js", "application.js"))
-      template("project/lib/project/backend.rb.tt", File.join(lib_path, "projectA", "backend.rb"))
+      template("project/lib/project/backend.rb.tt", File.join(lib_path, project_name, "backend.rb"))
+
+      execute_and_edit_bundle_gem(project_name, options)
     end
 
     desc "version", "Prints the SinatraWebsocketTemplate's version"
@@ -38,9 +39,14 @@ module SinatraWebsocketTemplate
     map %w(-v --version) => :version
 
     no_commands do
-      def execute_and_edit_bundle_gem(dir, project_name)
+      def execute_and_edit_bundle_gem(project_name, options)
+        dir = options[:dir]
+        opts = %i(test bin).map do |k|
+          "--#{k}=#{options[k]}" if options[k]
+        end.join(" ")
+
         FileUtils.mkdir_p(dir)
-        Dir.chdir(dir) { system("bundle gem #{project_name}") }
+        Dir.chdir(dir) { system("bundle gem #{project_name} #{opts}") }
         gemspec = File.join(dir, project_name, "#{project_name}.gemspec")
         edit_gemspec(gemspec)
       rescue => e
