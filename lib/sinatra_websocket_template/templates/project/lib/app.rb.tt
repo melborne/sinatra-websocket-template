@@ -1,0 +1,10 @@
+require 'sinatra/base'
+require 'haml'
+
+module <%=config[:module_name]%>
+  class App < Sinatra::Base
+    get "/" do
+      haml :index
+    end
+  end
+end

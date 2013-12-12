@@ -1,0 +1,6 @@
+require 'app'
+require '<%=config[:namespaced_path]%>/backend'
+
+use <%=config[:module_name]%>::Backend
+
+run <%=config[:module_name]%>::App
