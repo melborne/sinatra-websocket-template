@@ -51,9 +51,12 @@ module SinatraWebsocketTemplate
         content = File.read(file)
         content.sub!(/^end\n$/, '')
         content.concat(<<-EOS)
+  spec.add_development_dependency "foreman"
+
   spec.add_dependency "faye-websocket"
-  spec.add_dependency "sinatra"
   spec.add_dependency "puma"
+  spec.add_dependency "sinatra"
+  spec.add_dependency "haml"
 
   spec.required_ruby_version = ">= 2.0.0"
 end
