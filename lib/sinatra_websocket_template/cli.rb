@@ -12,7 +12,7 @@ module SinatraWebsocketTemplate
     desc "new PROJECT", "Creates a skelton for your project"
     option :dir, aliases:"-d", default:Dir.pwd, banner:"Specify a target directory for your project."
     option :test, aliases:"-t", lazy_default:"rspec", banner:"Generate a test directory(default: rspec)."
-    option :bin, aliases:"-b", default:false, banner:"Generate a binary."
+    option :bin, aliases:"-b", type: :boolean, default:false, banner:"Generate a binary."
     def new(project_name)
       target = File.join(options[:dir], project_name)
       opts = {
