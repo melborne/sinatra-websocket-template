@@ -27,7 +27,7 @@ module SinatraWebsocketTemplate
       template("project/lib/views/index.haml.tt", File.join(lib_path, "views", "index.haml"), opts)
       template("project/lib/public/css/main.css.tt", File.join(lib_path, "public", "css", "main.css"))
       template("project/lib/public/js/application.js.tt", File.join(lib_path, "public", "js", "application.js"))
-      template("project/lib/project/backend.rb.tt", File.join(lib_path, project_name, "backend.rb"))
+      template("project/lib/project/backend.rb.tt", File.join(lib_path, project_name, "backend.rb"), opts)
 
       execute_and_edit_bundle_gem(project_name, options)
     end
